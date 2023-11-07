@@ -1,0 +1,55 @@
+defaults:
+  - _self_
+  - model: "probe_model"
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled
+
+wandb:
+  project: "abstract-state-seqmodel"
+
+pretrained_model_config:
+  ctx_size: 64
+  max_goal_length: ???
+  max_episode_length: 64
+  model_config:
+    embed_dim: 768
+    symbolic_embed_dim: 32
+    n_enc_layers: 6
+    n_head: 8
+    pdrop: 0.1
+
+hydra:
+  output_subdir: null  
+  run:  
+    dir: .
+
+data_seed: 42  # need to keep the same data seed used in precomputation
+seed: 100005
+
+is_goal: True
+is_randomly_initialized: False
+probe_type: ???  # ["agent_loc", "board", "neighbor"]
+probe_layer: ???
+probe_intermediate_dim: 768
+model_type: ???  # ["random", "causal_all", "causal_withold_state"]
+obs_type: "full_symbolic"
+level_name: ???
+env_name: ???  # specified later
+ckpt_root: ???  # need to be specified before running experiments
+data_root: ???  # need to be specified before running experiments
+save_dir_root: ???  # need to be specified before running experiments
+
+# Training arguments
+devices: ???
+epochs: 200
+lr: 1e-4
+weight_decay: 0
+betas: [.9, .999]
+batch_size: 128  # default 128
+num_workers: 8
+train_size: 1000000
+valid_size: 100000
+test_size: 100000
+eval_interval_epochs: 1
+info: ''
+

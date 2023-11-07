@@ -1,0 +1,14 @@
+_target_: 'vlm_rule_learning.model.causalmtm_all.CausalforMTM'
+env_name: ???
+obs_dim: ???
+action_dim: ???
+ctx_size: ???
+epochs: ???
+lr: ???
+model_config:
+  model_type: "causal_all"
+  embed_dim: 768
+  symbolic_embed_dim: 32
+  n_enc_layers: 6
+  n_head: 8
+  pdrop: 0.1

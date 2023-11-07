@@ -1,0 +1,12 @@
+[submodule "babyai"]
+	path = babyai
+	url = https://github.com/tttyuntian/babyai.git
+    branch = abstract-state-seqmodel
+[submodule "gym-minigrid"]
+	path = gym-minigrid
+	url = https://github.com/tttyuntian/gym-minigrid.git
+    branch = abstract-state-seqmodel
+[submodule "gym"]
+	path = gym
+	url = https://github.com/tttyuntian/gym.git
+    branch = abstract-state-seqmodel

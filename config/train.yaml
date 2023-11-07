@@ -1,0 +1,37 @@
+defaults:
+  - _self_
+  - model: ???  # ["causal", "causal_withold_state"]
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled
+
+wandb:
+  project: "abstract-state-seqmodel"
+
+hydra:
+  output_subdir: null  
+  run:  
+    dir: .
+
+seed: 1
+
+level_name: ??? # specified later
+env_name: ???  
+data_root: ???  # need to be specified before running experiments
+max_goal_length: 10
+max_episode_length: 64
+obs_type: "full_symbolic"
+max_step_threshold: 64
+ctx_size: 64
+devices: ???
+epochs: ???
+lr: 3e-5
+batch_size: 128  # default 128
+num_workers: 8
+train_size: 1000000
+eval_interval_epochs: 1
+info: ''
+resume: False
+seqmodel_ckpt_path: ???
+
+is_goal: True
+
